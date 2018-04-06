@@ -7,6 +7,8 @@ class sluavImage(object):
         """ The object is initilized with a string that is the path to the intended
 photo for manipulation. Function library is currently not robust and will not throw applicable errors."""
         self._img = cv2.imread(imgFile)
+        if(self._img is None):
+            raise IOError('File failed to initialize the object. Is the path correct?')
         self._ROIs = []
         self._path = imgFile
 
@@ -23,7 +25,10 @@ photo for manipulation. Function library is currently not robust and will not th
         output = 'Obeject id of: ' + str(id(self)) + " based on " + self._path + " with " + str(len(self._ROIs)) + ' number of regions'
         return output
  
-        
+    def __len__(self):
+    	"""The length is the number of ROIs"""
+    	return(len(self._ROIs))
+    	
     def resize(self, SCALING = 1.0):
         """A function for resizing the img of an object"""
         newImg = cv2.resize(self._img,None,fx=SCALING, fy=SCALING, interpolation = cv2.INTER_LINEAR)
@@ -109,10 +114,10 @@ possible targets"""
             height, width, color = img.shape
 
         vis = img.copy()
-        mser = cv2.MSER()
+        mser = cv2.MSER_create()
 
-        regions = mser.detect(img, None)
-        hulls = [cv2.convexHull(p.reshape(-1, 1, 2)) for p in regions]
+        regions = mser.detectRegions(img)
+        hulls = [cv2.convexHull(p.reshape(-1, 1, 2)) for p in regions[0]]
 
         ROIs = []
         for i in range(len(hulls)):

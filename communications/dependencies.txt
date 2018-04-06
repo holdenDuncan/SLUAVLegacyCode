@@ -1,0 +1,6 @@
+For these scripts the following software must be installed
+besides the scripts located throughout the files:
+
+opencv for python2 and python3
+inotify-tools
+
