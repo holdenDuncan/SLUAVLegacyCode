@@ -9,4 +9,6 @@
 #	path/to/image path/to/save/destination 
 #On the command line
 
-python ~/teamGitShortcut/imageProcessing/detection/detectAndReturn.py $1 $2
+# Note: Currently only functions when called by 'masterScript.sh' within the master folder
+
+python ../imageProcessing/detection/detectAndReturn.py $1 $2

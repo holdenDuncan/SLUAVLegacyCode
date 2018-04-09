@@ -32,16 +32,17 @@ be run at competition. General Rules for this directory:
  i.e. this starts everything needed for the competition
                     /\
                    /  \
-                  /    \         
+                  /    \
+                 /      \
            startUp      Images
       initialization      raw downloaded images
-    scripts like all            are processed when they enter here     
+    scripts like all    are processed when they enter here     
     the needed watch           /\
     scripts and               /  \
     telemetry etc.           /    \
                             /      \
                      Metadata       ROIs
-            Contains the metadata        Contains cropped images
+            Contains the metadata     Contains cropped images
           of the ROI as a .json     of possible targets based
           that may be copied        on the detection scripts.
           down later if the ROI     Classification is run on

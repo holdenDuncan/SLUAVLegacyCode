@@ -1,0 +1,5 @@
+Current Dependencies for this directory:
+
+- Open CV 3.X.X
+- inotify-tools
+

@@ -3,10 +3,10 @@
 #Author:  Holden Duncan
 #-----------------------------#
 
-#A script to detect ROI's and then save the cropped
-#Regions out. Note, the dection variables are default
-#and must be changed within the script. But the target
-#image and save destination may be specified on command line.
+# A script to detect ROI's and then save the cropped
+# regions. Note, the dection variables are default
+# and must be changed within the script, but the target
+# image and save destination may be specified on command line.
 
 # Use: python detectAndReturn.py <imageName.jpg> <path/to/save/desitination>
 
@@ -27,10 +27,10 @@ try:
 except:
     raise IOError('The image does not exist or the path is bad')
     fault = True
-    
+
 if not fault:
     img.getROIs()
     img.removeDups()
-    
+
     for i in range(len(img)):
         cv2.imwrite(sys.argv[2] + 'target' + str(i) + '.jpeg', img.getRegion(i))
