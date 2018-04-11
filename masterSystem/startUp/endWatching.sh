@@ -8,6 +8,7 @@
 # all the inotifywait commands running in the background.
 
 # Note: As more watches are made this script needs to be updated.
-
-ps -aux | grep imageWatch.sh
-killall imageWatch.sh inotifywait
+echo 'Ending Watches...'
+ps -aux | grep -q imageWatch.sh
+killall -q imageWatch.sh inotifywait
+echo 'All Watches Ended'

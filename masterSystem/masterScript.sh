@@ -10,6 +10,8 @@
 
 # Note: There's not much now but that will change
 
+echo -ne 'Begining Master Initialization...\n\n'
+
 #-------Gather parameters-------#
 # This is to avoid hard coding IPs, usernames, passwords.
 # eventually this should call a script asking for the information
@@ -21,13 +23,14 @@
 # startUp/testConns.sh
 
 #-------Set Up watches-------#
-echo 'Setting up watches'
 startUp/beginWatching.sh
-echo 'Watches Complete'
+echo -ne 'Watches Complete\n\n'
 #--Start all the necessary data flow--#
 # ../path/to/script/mavlink.sh
 # ../path/to/script/initClient.sh
 # etc.
+
+echo -ne 'Master Initialization Complete\n\n'
 
 #--Clean up, close connections, and end running jobs--#
 #script to end watches

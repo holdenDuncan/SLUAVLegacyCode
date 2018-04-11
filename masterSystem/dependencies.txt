@@ -2,4 +2,5 @@ Current Dependencies for this directory:
 
 - Open CV 3.X.X
 - inotify-tools
-
+- Python 2 & 3
+- pyserial & AUVSI code base (i.e. Client.py etc.)

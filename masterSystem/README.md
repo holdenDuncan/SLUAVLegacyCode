@@ -4,6 +4,7 @@ be run at competition. General Rules for this directory:
 -Do not remove or move directories as scripts might
     rely on a specific structure of directories
     i.e. when shipping files around to certain destinations
+    don't distrupt the current file structure.
 
 -As far as I am aware these scripts are linux specific and 
     also require a number of dependencies to be installed. So
@@ -22,48 +23,65 @@ be run at competition. General Rules for this directory:
     hard coded paths within the scripts.
 
 -Keep source code in the proper directory. To access source code 
-    use ../path/to/file in order to step out of this directory.
+    use ../path/to/file in order to step out of the current directory
+    and then go to the path within this git.
     (Use /../ in order to step out as many times as needed)
 
-#-----------The file structure------------#
-
-               masterSystem
- This should contain just one script to rule them all
- i.e. this starts everything needed for the competition
-                    /\
-                   /  \
-                  /    \
-                 /      \
-           startUp      Images
-      initialization      raw downloaded images
-    scripts like all    are processed when they enter here     
-    the needed watch           /\
-    scripts and               /  \
-    telemetry etc.           /    \
-                            /      \
-                     Metadata       ROIs
-            Contains the metadata     Contains cropped images
-          of the ROI as a .json     of possible targets based
-          that may be copied        on the detection scripts.
-          down later if the ROI     Classification is run on
-          is classified as a        files that enter here.       
-          target                             /\
-                                            /  \
-                                           /    \
-                                          /      \
-				   Garbage	  Targets
-                            ROI's rejected          An image that makes it here
-                            as non-targets        has been classified and has a
-                            kept to help with     similarly named .json of data.
-                            debugging and to      and once here it is checked to 
-                            see what's being      see if it is a duplicate of a 
-                            rejected              previously submitted target and 
-                                                  if not it is submitted.
+	 -------------------------------
+	 |      The file structure     |
+	 -------------------------------
+                      |
+                      ^
+                     /|\
+---------------------------------------------------------
+|                     masterSystem	                |
+| This should contain just one script to rule them all  |
+| i.e. this starts everything needed for the competition|
+---------------------------------------------------------                  
+                     ^
+                    / \
+                   /   \
+                  /     \
+                 /       \
+   ------------------   ------------------------------------           
+   |     startUp    |   |            Images		   |
+   |  initialization|   |  raw downloaded images           |
+   |scripts like all|   |are processed when they enter here|
+   |the needed watch|   ------------------------------------
+   |scripts and     |             / \
+   |telemetry etc.  |            /   \
+   ------------------           /     \
+                               /       \
+         --------------------------   ---------------------------
+         |        Metadata        |   |         ROIs            |
+         |  Contains the metadata |   | Contains cropped images |
+         |of the ROI as a .json   |   |of possible targets based|
+         |that may be copied      |   |on the detection scripts.|
+         |down later if the ROI   |   |Classification is run on |
+         |is classified as a      |   |files that enter here.   |    
+         |target		  |   ---------------------------
+         --------------------------           ^
+                                             / \
+                                            /   \
+                                           /     \
+                                          /       \
+                           -------------------   ---------------------------------
+			   |    Garbage      |	 |            Targets            |
+                           |ROI's rejected   |   |  An image that makes it here  |
+                           |as non-targets   |   |has been classified and has a  |
+                           |kept to help with|   |similarly named .json of data. |
+                           |debugging and to |   |and once here it is checked to |
+                           |see what's being |   |see if it is a duplicate of a  |
+                           |rejected         |   |previously submitted target and| 
+                           -------------------   |if not then it is submitted.   |
+                                                 --------------------------------- 
                                                               \
                                                                \
                                                                 \
                                                                  \
-                                                                  Submitted
-                                                                    Images placed here will be
-                                                                  submitted along with their .json
-                                                                  for judging.
+								 -----------------------------------
+                                                                 |           Submitted             |
+                                                                 |  Images placed here will be     |
+                                                                 | submitted along with their .json|
+                                                                 | for judging.			   | 
+                                                                 -----------------------------------

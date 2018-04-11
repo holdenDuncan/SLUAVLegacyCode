@@ -16,7 +16,7 @@ from sluavImage import *
 
 fault = False
 
-print( sys.argv[1] + ' ' +sys.argv[2])
+#print( sys.argv[1] + ' ' +sys.argv[2])
 
 if(len(sys.argv) != 3):
     fault = True
@@ -28,9 +28,21 @@ except:
     raise IOError('The image does not exist or the path is bad')
     fault = True
 
+raw_name = sys.argv[1]
+filename = ''
+
+for i in range(len(raw_name)-1,0,-1):
+    if raw_name[i] == '/':
+        break
+    else:
+        filename = raw_name[i] + filename
+
+filename = filename[:(filename.rfind("."))]
+
+
 if not fault:
     img.getROIs()
     img.removeDups()
 
     for i in range(len(img)):
-        cv2.imwrite(sys.argv[2] + 'target' + str(i) + '.jpeg', img.getRegion(i))
+        cv2.imwrite(sys.argv[2] + filename + '_ROI_' + str(i) + '.jpeg', img.getRegion(i))
