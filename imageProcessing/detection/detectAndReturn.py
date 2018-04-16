@@ -41,8 +41,12 @@ filename = filename[:(filename.rfind("."))]
 
 
 if not fault:
-    img.getROIs()
-    img.removeDups()
+    img.getROIs(550, 100, )
+    img.removeDups(50)
+
 
     for i in range(len(img)):
         cv2.imwrite(sys.argv[2] + filename + '_ROI_' + str(i) + '.jpeg', img.getRegion(i))
+
+    img.drawROIs()
+    cv2.imwrite(sys.argv[2]+'BOX_'+filename+ '.jpeg', img._img)

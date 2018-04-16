@@ -14,9 +14,9 @@
 
 #WARNING: THIS SCRIPT MUST BE RUN BY beginWAtching.sh IN THE MASTER FOLDER
 #echo -ne 'Image watch initializing...\r'
-inotifywait -q  -m Images/ -e create -e moved_to --format '%f' | while read FILE
+inotifywait -q  -m images/ -e create -e moved_to --format '%f' | while read FILE
     do
-
-      ../communications/fileManagementScripts/detectAndSave.sh Images/$FILE Images/ROIs/
+    sleep 5
+      ../communications/fileManagementScripts/detectAndSave.sh images/$FILE images/ROIs/ &
 
     done

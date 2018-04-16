@@ -24,26 +24,29 @@ photo for manipulation. Function library is currently not robust and will not th
     def __repr__(self):
         output = 'Obeject id of: ' + str(id(self)) + " based on " + self._path + " with " + str(len(self._ROIs)) + ' number of regions'
         return output
- 
+
     def __len__(self):
     	"""The length is the number of ROIs"""
     	return(len(self._ROIs))
-    	
+
     def resize(self, SCALING = 1.0):
         """A function for resizing the img of an object"""
         newImg = cv2.resize(self._img,None,fx=SCALING, fy=SCALING, interpolation = cv2.INTER_LINEAR)
         self._img = newImg
         #return newImg
-        
+
     def removeDups(self, margin = 10):
         """A function to remove duplicate ROIs by grouping ROIs based on
 the given margin and averaging out the values to create the best single
 region."""
         ## Storing the locations of duplicates as a list with entries of lists with intergers
-        ## indicating the idex of dups. 
+        ## indicating the idex of dups.
         dupLocs = []
         counter = -1
         done = False
+
+	if(len(self._ROIs) == 0):
+	    done = True
 
         while not done:
 
@@ -51,7 +54,7 @@ region."""
             xMax, yMax, xMin, yMin = self._ROIs[counter]
             dupSet = []
             innerCounter = -1
-            
+
             for xMaxCheck, yMaxCheck, xMinCheck, yMinCheck in self._ROIs:
                 innerCounter += 1
                 if xMaxCheck - margin < xMax < xMaxCheck + margin:

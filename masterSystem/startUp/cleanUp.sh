@@ -14,8 +14,8 @@
 # Note: This script also runs the endWatches.sh to make Holden's life easier
 #         Also, this only works when called and ran within the master folder
 
-find Images/  -type f \( -name "*.jpg" -o -name "*.jpeg" \) -delete
-find Images/ROIs/ -type f \( -name "*.jpg" -o -name "*.jpeg" \) -delete
+find images/  -type f \( -name "*.jpg" -o -name "*.jpeg" \) -delete
+find images/ROIs/ -type f \( -name "*.jpg" -o -name "*.jpeg" \) -delete
 #find Images/ROIs/Targets -type f -iname \*.jpg -delete
 #find Images/ROIs/Garbage -type f -iname \*.jpg -delete
 #find Images/ROIs/Targets -type f -iname \*.jpg -delete
