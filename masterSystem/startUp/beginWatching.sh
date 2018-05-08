@@ -8,6 +8,6 @@
 # for the directories and will require updateing as
 # new processes are completed and introduced
 
-echo -ne 'Watches Initalizing...\n'
+#echo -ne 'Watches Initalizing...\n'
 startUp/imageWatch.sh &
 #startUp/roiWatch.sh &

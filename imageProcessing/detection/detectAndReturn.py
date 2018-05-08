@@ -41,7 +41,7 @@ filename = filename[:(filename.rfind("."))]
 
 
 if not fault:
-    img.getROIs(550, 100, )
+    img.getROIs(650, 65)
     img.removeDups(50)
 
 

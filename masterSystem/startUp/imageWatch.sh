@@ -16,7 +16,7 @@
 #echo -ne 'Image watch initializing...\r'
 inotifywait -q  -m images/ -e create -e moved_to --format '%f' | while read FILE
     do
-    sleep 5
+    sleep 20
       ../communications/fileManagementScripts/detectAndSave.sh images/$FILE images/ROIs/ &
 
     done
