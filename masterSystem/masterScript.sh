@@ -35,7 +35,7 @@ if [ $? -eq 0 ]
 then
   echo -ne "${GREEN}Onboard RaspberryPi found${NC}\n"
 else
-  echo -ne "${RED}Onboard RaspberryPi could not be found. Check the network and try again.${NC}\n"
+  echo -ne "${RED}Onboard RaspberryPi could not be found.\n"
   FAILED=1
 fi
 
@@ -44,17 +44,27 @@ if [ $? -eq 0 ]
 then
   echo -ne "${GREEN}Primary Groundstation found${NC}\n"
 else
-  echo -ne "${RED}Primary Groundstation could not be found. Check the network and try again.${NC}\n"
+  echo -ne "${RED}Primary Groundstation could not be found.\n"
+  FAILED=1
+fi
+
+./startUp/testServer.sh
+if [ $? -eq 0 ]
+then
+  echo -ne "\r${GREEN}Interop Server Log in Valid${NC}\n"
+else
+  echo -ne "${RED}Interop could not be found.\n"
   FAILED=1
 fi
 
 if [ $FAILED -eq 1 ]
 then
-  echo -ne "${RED}There is a connection issue. Read above for what failed${NC}\n"
+  echo -ne "${RED}Not all devices where able to be found\n\nAborting Program\n${NC}"
   exit 1
 else
   echo -ne "${GREEN}All Devices Found${NC}\n"
   fi
+sleep .5
 #-------Set Up watches-------#
 echo -ne "\n${YELLOW}Watches Initalizing..."
 startUp/beginWatching.sh
@@ -66,19 +76,25 @@ echo -ne "${GREEN}Watches Complete${NC}\n"
 # etc.
 
 echo -ne "${BLUE}Master Initialization Complete${NC}\n\n"
-
+sleep .5
 # Start taking pictures
 #./../auvsi_communications/camera/camera.sh $1
 sudo sudo python3 ../auvsi_communications/camera/groundstation.py 1000 &
-sudo gnome-terminal --geometry 80x24+430+5 --window-with-profile=HOLD -e ./startUp/startCamera.sh> /dev/null
+groundPID=$! #will be used to kill the process later
+sudo gnome-terminal --geometry 80x24+430+5 --window-with-profile=HOLD -e ./startUp/startCamera.sh> /dev/null 2>&1
+#echo -ne "\n${RED}Pi is disabled in masterscript\n"
 
 #This keeps the script going until the loop is exited
 #then the clean up may take place and the program can actually end
 EXIT=1
 trap EXIT=0 SIGINT #sets up ^c to exit cleanly
 
-echo -ne "${YELLOW}Use Ctrl+C to Begin ShutDown${NC}\n"
+echo -ne "${YELLOW}Use Ctrl+C to Begin ShutDown${NC}\n\n"
 #Use this loop to continously show changing data
+echo -ne "${BLUE}|----------System---------|${NC}\n"
+echo -ne "${YELLOW}Starting Telemetry${NC}\r"
+startUp/beginTelemetry.sh
+
 while :
 do
     #echo "Use Ctrl C to exit"
@@ -88,7 +104,7 @@ do
     break
     fi
 done
-
+echo -ne "\n\n"
     #get key press to check against
 #--Clean up, close connections, and end running jobs--#
 echo -ne "\n${BLUE}Cleaning Up and Exiting Processes${NC}\n"
@@ -98,7 +114,7 @@ startUp/endWatching.sh
 echo -ne "${GREEN}All Watches Ended\n"
 #close groundstation port
 echo -ne "${YELLOW}Ending Ground Server..."
-startUp/endGroundstation.sh
+startUp/endGroundstation.sh $groundPID
 echo -ne "${GREEN}Ground Server Ended\n"
 
 #close connections
