@@ -35,7 +35,7 @@ if [ $? -eq 0 ]
 then
   echo -ne "${GREEN}Onboard RaspberryPi found${NC}\n"
 else
-  echo -ne "${RED}Onboard RaspberryPi could not be found.\n"
+  echo -ne "${RED}Onboard RaspberryPi could not be found\n"
   FAILED=1
 fi
 
@@ -44,7 +44,7 @@ if [ $? -eq 0 ]
 then
   echo -ne "${GREEN}Primary Groundstation found${NC}\n"
 else
-  echo -ne "${RED}Primary Groundstation could not be found.\n"
+  echo -ne "${RED}Primary Groundstation could not be found\n"
   FAILED=1
 fi
 
@@ -53,7 +53,7 @@ if [ $? -eq 0 ]
 then
   echo -ne "\r${GREEN}Interop Server Log in Valid${NC}\n"
 else
-  echo -ne "${RED}Interop could not be found.\n"
+  echo -ne "${RED}Interop could not be found\n"
   FAILED=1
 fi
 
@@ -79,9 +79,9 @@ echo -ne "${BLUE}Master Initialization Complete${NC}\n\n"
 sleep .5
 # Start taking pictures
 #./../auvsi_communications/camera/camera.sh $1
-sudo sudo python3 ../auvsi_communications/camera/groundstation.py 1000 &
+sudo sudo python3 ../auvsi_communications/camera/groundstation.py 1000 #> /dev/null 2>&1 &
 groundPID=$! #will be used to kill the process later
-sudo gnome-terminal --geometry 80x24+430+5 --window-with-profile=HOLD -e ./startUp/startCamera.sh> /dev/null 2>&1
+sudo gnome-terminal --geometry 80x24+430+5 --window-with-profile=HOLD -e ./startUp/startCamera.sh > /dev/null 2>&1
 #echo -ne "\n${RED}Pi is disabled in masterscript\n"
 
 #This keeps the script going until the loop is exited

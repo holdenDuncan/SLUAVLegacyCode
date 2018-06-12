@@ -11,4 +11,4 @@
 
 # Note: Currently only functions when called by 'masterScript.sh' within the master folder
 
-python ../imageProcessing/detection/detectAndReturn.py $1 $2
+python ~/interop/SLUAVProgramming/imageProcessing/detection/detectAndReturn.py $1 $2
