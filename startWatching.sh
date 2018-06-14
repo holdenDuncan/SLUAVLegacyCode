@@ -10,4 +10,5 @@
 
 #echo -ne 'Watches Initalizing...\n'
 ./imageWatch.sh &
+./submitWatch.sh &
 #startUp/roiWatch.sh &
