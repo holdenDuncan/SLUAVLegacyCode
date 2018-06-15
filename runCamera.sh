@@ -2,7 +2,7 @@ sudo python3 ~/interop/SLUAVProgramming/auvsi_communications/camera/groundstatio
 groundPID=$!
 ./startCam.sh
 ./startWatching.sh
-./beginTelemetry.sh
+./beginTelemetry.sh &
 EXIT=1
 trap EXIT=0 SIGINT #sets up ^c to exit cleanly
 while :

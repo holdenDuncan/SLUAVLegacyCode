@@ -1,0 +1,28 @@
+total 57212 drwxr-xr-x 44 user user 4096 May 10 19:02 . drwxr-xr-x 3 root root 4096 Nov 12 23:30 .. drwxrwxr-x 2 user user 4096 Dec 26 
+11:39 .arduino drwxrwxr-x 2 user user 4096 Nov 13 10:06 auvsi-suas -rw------- 1 user user 32501 May 10 21:03 .bash_history -rw-r--r-- 1 
+user user 220 Nov 12 23:30 .bash_logout -rw-r--r-- 1 user user 3771 Nov 12 23:30 .bashrc drwx------ 22 user user 4096 May 10 19:02 
+.cache drwxrwx--- 2 user user 4096 Feb 2 00:05 .certificates drwxr-xr-x 3 user user 4096 Jan 17 10:07 .codeblocks drwx------ 3 user 
+user 4096 Nov 13 00:08 .compiz drwx------ 22 user user 4096 May 10 19:07 .config drwx------ 3 root root 4096 May 10 19:02 .dbus 
+drwxr-xr-x 12 user user 4096 May 10 21:01 Desktop -rw-r--r-- 1 user user 25 Jan 24 14:42 .dmrc drwxr-xr-x 3 user user 4096 Dec 26 11:27 
+Documents drwxr-xr-x 16 user user 4096 Dec 18 14:40 .dolphin-emu drwxr-xr-x 6 user user 4096 May 7 12:08 Downloads -rw-r--r-- 1 user 
+user 8980 Nov 12 23:30 examples.desktop drwx------ 2 user user 4096 Jan 28 20:53 .gconf -rw-rw-r-- 1 user user 1595408 Nov 6 2016 
+get-pip.py -rw-rw-r-- 1 user user 108 Mar 27 18:50 .gitconfig drwx------ 2 user user 4096 Apr 11 18:20 .git-credential-cache drwx------ 
+3 user user 4096 May 7 12:30 .gnupg drwx------ 5 user user 4096 May 10 14:24 .googleearth -rw-rw-r-- 1 user user 56532932 Feb 6 15:00 
+google-earth-stable_current_amd64.deb drwx------ 2 user user 4096 Apr 15 23:11 .gphoto dr-x------ 2 root root 0 May 10 19:02 .gvfs 
+-rw------- 1 user user 11460 May 7 12:30 .ICEauthority drwxrwxr-x 2 user user 4096 Nov 13 15:12 .idlerc drwxrwxr-x 9 user user 4096 May 
+7 19:12 interop drwxrwxr-x 3 user user 4096 Dec 26 11:39 .java drwxrwxr-x 2 user user 4096 Mar 6 21:00 .keras drwx------ 3 user user 
+4096 Nov 12 18:44 .local drwx------ 5 user user 4096 Nov 28 17:31 .mozilla -rw-rw-r-- 1 user user 142199 Apr 16 17:12 mozilla.pdf 
+drwxr-xr-x 2 user user 4096 Nov 12 18:44 Music drwxrwxr-x 2 user user 4096 Feb 7 10:21 .nano drwxrwxr-x 2 user user 4096 Apr 20 10:46 
+networking -rw------- 1 user user 5787 Feb 9 10:03 nohup.out drwxrwxr-x 15 user user 4096 Nov 13 11:45 opencv -rwxrwxr-x 1 user user 
+6410 Apr 4 19:19 opencvDirectInstall.sh -rwxr-xr-x 1 user user 28 Mar 21 14:42 openTerm.sh drwxr-xr-x 2 user user 4096 Nov 12 18:44 
+Pictures drwx------ 3 user user 4096 Dec 18 14:28 .pki drwxrwxr-x 3 user user 4096 Apr 9 13:43 processing -rw-r--r-- 1 user user 655 
+Nov 12 23:30 .profile drwxrwxr-x 2 user user 4096 Jan 14 13:04 PS2-Games drwxrwxr-x 2 user user 4096 Jan 14 10:27 PS-Bios drwxr-xr-x 2 
+user user 4096 Nov 12 18:44 Public -rw------- 1 user user 256 Dec 18 14:28 .pulse-cookie -rw------- 1 user user 7 Apr 5 11:36 
+.python_history drwxrwxr-x 4 user user 4096 Dec 26 11:56 sketchbook drwxr-xr-x 4 user user 4096 Mar 9 18:11 snap drwx------ 2 user user 
+4096 Apr 26 14:04 .ssh drwx------ 2 user user 4096 Nov 13 12:08 .ssh.tmp drwxrwxr-x 19 user user 4096 Dec 18 15:56 .steam drwxrwxr-x 3 
+user user 4096 Dec 18 14:27 Steam lrwxrwxrwx 1 user user 29 Dec 18 15:55 .steampath -> /home/user/.steam/sdk32/steam lrwxrwxrwx 1 user 
+user 27 Dec 18 15:55 .steampid -> /home/user/.steam/steam.pid -rw-r--r-- 1 user user 0 Nov 12 18:51 .sudo_as_admin_successful 
+lrwxrwxrwx 1 user user 51 Apr 5 17:15 teamGitShortcut -> /home/user/interop/ProgrammingTeam/SLUAVProgramming drwxr-xr-x 2 user user 
+4096 Nov 12 18:44 Templates drwxr-xr-x 2 user user 4096 Nov 12 18:44 Videos -rw------- 1 user user 6812 May 10 14:25 .viminfo 
+-rw-rw-r-- 1 user user 175 May 7 12:55 .wget-hsts -rw------- 1 user user 61 May 7 12:29 .Xauthority -rw------- 1 user user 82 May 7 
+12:29 .xsession-errors -rw------- 1 user user 1922 May 7 12:28 .xsession-errors.old
